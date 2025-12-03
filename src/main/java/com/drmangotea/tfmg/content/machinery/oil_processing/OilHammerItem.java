@@ -23,18 +23,28 @@ public class OilHammerItem extends Item {
         BlockPos pos = context.getClickedPos();
         Player player = context.getPlayer();
 
-        for(int i = 0;i<300;i++){
+        for (int i = 0; i < 300; i++) {
             BlockPos posToCheck = pos.below(i);
-            if(level.getBlockState(posToCheck).is(TFMGBlocks.OIL_DEPOSIT.get())){
-                if(TFMG.DEPOSITS.getReservoirFor(posToCheck.asLong())==null)
+            if (level.getBlockState(posToCheck).is(TFMGBlocks.OIL_DEPOSIT.get())) {
+                if (TFMG.DEPOSITS.getReservoirFor(posToCheck.asLong()) == null)
                     return InteractionResult.SUCCESS;
                 int oilReserves = TFMG.DEPOSITS.getReservoirFor(posToCheck.asLong()).oilReserves;
 
-                if (level.isClientSide&&player!=null)
+                if (level.isClientSide && player != null)
                     player.displayClientMessage(TFMGLang.translateDirect("oil_hammer.reserves", oilReserves)
                             .withStyle(ChatFormatting.YELLOW), true);
 
                 return InteractionResult.SUCCESS;
+            //} else if (level.getBlockState(posToCheck).is(TFMGBlocks.MAGMA_DEPOSIT.get())) {
+            //    if (TFMG.DEPOSITS.getReservoirFor(posToCheck.asLong()) == null)
+            //        return InteractionResult.SUCCESS;
+            //    int magmaReserves = TFMG.DEPOSITS.getReservoirFor(posToCheck.asLong()).magmaReserves;
+//
+     //            if (level.isClientSide && player != null)
+  //                  player.displayClientMessage(TFMGLang.translateDirect("magma_hammer.reserves", magmaReserves)
+       //                     .withStyle(ChatFormatting.YELLOW), true);
+
+         //       return InteractionResult.SUCCESS;
             }
         }
 
@@ -43,3 +53,4 @@ public class OilHammerItem extends Item {
         return InteractionResult.SUCCESS;
     }
 }
+

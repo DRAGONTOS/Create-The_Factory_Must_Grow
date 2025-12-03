@@ -34,6 +34,7 @@ public class PumpjackBaseBlockEntity extends SmartBlockEntity implements IHaveGo
     public PumpjackBlockEntity controllerHammer;
     public boolean isRunning = false;
     int depositCheckTimer = 0;
+    int meow;
     public int miningRate = 0;
     protected IFluidHandler fluidCapability;
     public FluidTank tank;
@@ -110,6 +111,12 @@ public class PumpjackBaseBlockEntity extends SmartBlockEntity implements IHaveGo
             BlockPos checkedPos = new BlockPos(this.getBlockPos().getX(), (this.getBlockPos().getY() - 1) - i, this.getBlockPos().getZ());
             if (level.getBlockState(new BlockPos(checkedPos)).is(TFMGBlocks.OIL_DEPOSIT.get())) {
                 deposit = checkedPos;
+                meow = 1;
+                return;
+            }
+            if (level.getBlockState(new BlockPos(checkedPos)).is(TFMGBlocks.MAGMA_DEPOSIT.get())) {
+                deposit = checkedPos;
+                meow = 2;
                 return;
             }
             if (!(level.getBlockState(new BlockPos(checkedPos)).is(TFMGTags.TFMGBlockTags.INDUSTRIAL_PIPE.tag))) {
@@ -135,14 +142,22 @@ public class PumpjackBaseBlockEntity extends SmartBlockEntity implements IHaveGo
                 sendData();
             }
 
-
+        int amountPumped;
         if (tank.getFluidAmount() + miningRate > tank.getCapacity())
             return;
-        int amountPumped = tank.fill(new FluidStack(TFMGFluids.CRUDE_OIL.get().getSource(), miningRate), IFluidHandler.FluidAction.EXECUTE);
-        sendData();
-
-        if (amountPumped == 0)
+        if (meow == 1) {
+            amountPumped = tank.fill(new FluidStack(TFMGFluids.CRUDE_OIL.get().getSource(), miningRate), IFluidHandler.FluidAction.EXECUTE);
+            sendData();
+            if (amountPumped == 0)
             return;
+        }
+
+        if (meow == 2) {
+            amountPumped = tank.fill(new FluidStack(TFMGFluids.MOLTEN_MAGMA.get().getSource(), miningRate), IFluidHandler.FluidAction.EXECUTE);
+            sendData();
+            if (amountPumped == 0)
+            return;
+        }
 
         if (TFMGConfigs.common().worldgen.infiniteDeposits.get())
             return;
@@ -175,10 +190,6 @@ public class PumpjackBaseBlockEntity extends SmartBlockEntity implements IHaveGo
 
     protected SmartFluidTank createInventory() {
         return new SmartFluidTank(8000, this::onFluidStackChanged) {
-            @Override
-            public boolean isFluidValid(FluidStack stack) {
-                return stack.getFluid().isSame(TFMGFluids.CRUDE_OIL.getSource());
-            }
         };
     }
 

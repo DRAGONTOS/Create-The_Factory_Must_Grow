@@ -55,6 +55,7 @@ public class TFMGFluids {
             CREOSOTE = fuel("creosote", 0x010101, TFMGTags.TFMGFluidTags.CREOSOTE.tag, TFMGTags.TFMGFluidTags.BLAST_STOVE_FUEL.tag),
             MOLTEN_STEEL = hotFluid("molten_steel", 0xFFF760, TFMGTags.TFMGFluidTags.MOLTEN_STEEL.tag),
             MOLTEN_SLAG = hotFluid("molten_slag", 0xFFF760),
+            MOLTEN_MAGMA = hotFluid("molten_magma", 0xFFF760),
             MOLTEN_PLASTIC = hotFluid("molten_plastic", 0xDEE4FF),
             LIQUID_SILICON = hotFluid("liquid_silicon", 0xFFF760),
             LUBRICATION_OIL = fluid("lubrication_oil", 0x9D945F, TFMGTags.TFMGFluidTags.LUBRICATION_OIL.tag, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),

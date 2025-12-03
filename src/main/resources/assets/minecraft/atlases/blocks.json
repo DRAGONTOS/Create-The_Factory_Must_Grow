@@ -31,6 +31,8 @@
     {"type": "single", "resource": "tfmg:fluid/molten_slag_still"},
     {"type": "single", "resource": "tfmg:fluid/molten_steel_flow"},
     {"type": "single", "resource": "tfmg:fluid/molten_steel_still"},
+    {"type": "single", "resource": "tfmg:fluid/molten_magma_flow"},
+    {"type": "single", "resource": "tfmg:fluid/molten_magma_still"},
     {"type": "single", "resource": "tfmg:fluid/napalm_flow"},
     {"type": "single", "resource": "tfmg:fluid/napalm_still"},
     {"type": "single", "resource": "tfmg:fluid/liquid_silicon_flow"},

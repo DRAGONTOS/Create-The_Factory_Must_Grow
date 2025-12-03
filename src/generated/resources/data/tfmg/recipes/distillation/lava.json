@@ -1,0 +1,15 @@
+{
+  "type": "tfmg:distillation",
+  "ingredients": [
+    {
+      "amount": 200,
+      "fluidTag": "minecraft:lava"
+    }
+  ],
+  "results": [
+    {
+      "amount": 60,
+      "fluid": "minecraft:lava"
+    }
+  ]
+}

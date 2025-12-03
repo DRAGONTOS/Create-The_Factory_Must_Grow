@@ -2,6 +2,8 @@ package com.drmangotea.tfmg.worldgen;
 
 
 import com.drmangotea.tfmg.TFMG;
+import com.drmangotea.tfmg.worldgen.deposits.MagmaDepositFeature;
+import com.drmangotea.tfmg.worldgen.deposits.MagmaWellFeature;
 import com.drmangotea.tfmg.worldgen.deposits.OilDepositFeature;
 import com.drmangotea.tfmg.worldgen.deposits.OilWellFeature;
 import net.minecraft.core.registries.Registries;
@@ -22,6 +24,12 @@ public class TFMGFeatures {
 
     public static final DeferredHolder<Feature<?>, OilWellFeature> OIL_WELL =
             FEATURES.register("oil_well", () -> new OilWellFeature(NoneFeatureConfiguration.CODEC));
+
+    public static final DeferredHolder<Feature<?>, MagmaDepositFeature> MAGMA_DEPOSIT =
+            FEATURES.register("magma_deposit", () -> new MagmaDepositFeature(NoneFeatureConfiguration.CODEC));
+
+    public static final DeferredHolder<Feature<?>, MagmaWellFeature> MAGMA_WELL =
+            FEATURES.register("magma_well", () -> new MagmaWellFeature(NoneFeatureConfiguration.CODEC));
 
     public static void register(IEventBus modEventBus) {
         FEATURES.register(modEventBus);

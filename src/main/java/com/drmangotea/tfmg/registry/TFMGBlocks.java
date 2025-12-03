@@ -433,6 +433,19 @@ public class TFMGBlocks {
             .tag(AllTags.AllBlockTags.NON_MOVABLE.tag)
      .simpleItem()
             .register();
+    public static final BlockEntry<Block> MAGMA_DEPOSIT = REGISTRATE.block("magma_deposit", Block::new)
+            .initialProperties(() -> Blocks.BEDROCK)
+            .properties(p -> p.strength(69696969))
+            .properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
+            .transform(pickaxeOnly())
+            .tag(BlockTags.WITHER_IMMUNE)
+            .tag(BlockTags.DRAGON_IMMUNE)
+            .tag(BlockTags.DRAGON_IMMUNE)
+            .tag(BlockTags.INFINIBURN_OVERWORLD)
+            .tag(BlockTags.FEATURES_CANNOT_REPLACE)
+            .tag(AllTags.AllBlockTags.NON_MOVABLE.tag)
+            .simpleItem()
+            .register();
     //------------------VAT_MACHINES------------------//
     @SuppressWarnings("'addLayer(java.util.function.Supplier<java.util.function.Supplier<net.minecraft.client.renderer.RenderType>>)' is deprecated and marked for removal ")
     public static final BlockEntry<VatBlock> STEEL_CHEMICAL_VAT =

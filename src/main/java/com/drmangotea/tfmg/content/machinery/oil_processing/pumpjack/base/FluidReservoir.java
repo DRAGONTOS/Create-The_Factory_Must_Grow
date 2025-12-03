@@ -8,6 +8,7 @@ public class FluidReservoir {
     public final long id;
 
     public int oilReserves;
+    public int magmaReserves;
 
     public List<Long> deposits = new ArrayList<>();
 

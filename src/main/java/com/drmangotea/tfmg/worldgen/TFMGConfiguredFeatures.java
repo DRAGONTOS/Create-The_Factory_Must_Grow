@@ -23,6 +23,7 @@ import static net.minecraft.data.worldgen.features.FeatureUtils.register;
 public class TFMGConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>>
             OIL_DEPOSIT = key("oil_deposit"),
+            MAGMA_DEPOSIT = key("magma_deposit"),
             OIL_WELL = key("oil_well"),
             LEAD_ORE = key("lead_ore"),
             NICKEL_ORE = key("nickel_ore"),
@@ -61,6 +62,7 @@ public class TFMGConfiguredFeatures {
 
 
         register(ctx, OIL_DEPOSIT, TFMGFeatures.OIL_DEPOSIT.get(),new NoneFeatureConfiguration());
+        register(ctx, MAGMA_DEPOSIT, TFMGFeatures.MAGMA_DEPOSIT.get(),new NoneFeatureConfiguration());
         register(ctx, OIL_WELL, TFMGFeatures.OIL_WELL.get(),new NoneFeatureConfiguration());
 
         register(ctx, LEAD_ORE, Feature.ORE, new OreConfiguration(leadTargetStates, 12));

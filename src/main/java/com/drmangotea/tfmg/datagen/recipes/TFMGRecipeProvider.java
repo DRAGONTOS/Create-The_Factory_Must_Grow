@@ -646,6 +646,9 @@ public class TFMGRecipeProvider extends RecipeProvider {
         public static Fluid moltenSteel() {
             return TFMGFluids.MOLTEN_STEEL.getSource();
         }
+        public static Fluid moltenMagma() {
+            return TFMGFluids.MOLTEN_MAGMA.getSource();
+        }
         public static Fluid moltenSlag() {
             return TFMGFluids.MOLTEN_SLAG.getSource();
         }
@@ -737,6 +740,9 @@ public class TFMGRecipeProvider extends RecipeProvider {
         }
         public static ItemLike moltenSteelBucket() {
             return TFMGRegistrate.getBucket("molten_steel");
+        }
+        public static ItemLike moltenMagmaBucket() {
+            return TFMGRegistrate.getBucket("molten_magma");
         }
         public static ItemLike moltenSlagBucket() {
             return TFMGRegistrate.getBucket("molten_slag");
