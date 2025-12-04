@@ -47,6 +47,7 @@ public class TFMGFluids {
 
 
     public static final FluidEntry<BaseFlowingFluid.Flowing>
+            OIL = fluid("oil", 0x010101, TFMGTags.TFMGFluidTags.OIL.tag, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
             CRUDE_OIL = fluid("crude_oil", 0x010101, TFMGTags.TFMGFluidTags.CRUDE_OIL.tag, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
             HEAVY_OIL = fluid("heavy_oil", 0x010101, TFMGTags.TFMGFluidTags.HEAVY_OIL.tag, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
             GASOLINE = fuel("gasoline", 0xCCB17D, TFMGTags.TFMGFluidTags.GASOLINE.tag),

@@ -125,6 +125,7 @@ public class TFMGTags {
         HEAVY_OIL(COMMON),
         LUBRICATION_OIL(COMMON),
         NAPHTHA(COMMON),
+        OIL(COMMON),
         CRUDE_OIL(COMMON),
         MOLTEN_STEEL(COMMON),
         MOLTEN_MAGMA(COMMON),

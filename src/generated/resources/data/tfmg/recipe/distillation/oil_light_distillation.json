@@ -4,21 +4,21 @@
     {
       "type": "neoforge:single",
       "amount": 200,
-      "fluid": "tfmg:crude_oil"
+      "fluid": "tfmg:oil"
     }
   ],
   "results": [
     {
       "amount": 150,
-      "id": "tfmg:oil"
+      "id": "tfmg:heavy_oil"
     },
     {
       "amount": 45,
-      "id": "tfmg:lpg"
+      "id": "tfmg:diesel"
     },
     {
-      "amount": 60,
-      "id": "tfmg:natural_gas"
+      "amount": 5,
+      "id": "tfmg:gasoline"
     }
   ]
 }

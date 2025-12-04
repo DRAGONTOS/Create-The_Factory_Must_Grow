@@ -50,7 +50,7 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
 
     protected IFluidHandler fluidCapability;
 
-    public final FluidTank tank = new SmartFluidTank(8000, this::onFluidStackChanged);
+    public final FluidTank tank = new SmartFluidTank(2000, this::onFluidStackChanged);
 
     public DistillationControllerBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
@@ -138,7 +138,7 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
                 break;
 
             output.tank.fill(new FluidStack(fluidStack.getFluidHolder(), (int) (fluidStack.getAmount() * speedModifier)), IFluidHandler.FluidAction.EXECUTE);
-            int consumption = (recipe.getInputFluid().amount() / 6);
+            int consumption = (recipe.getInputFluid().amount() / 10);
 
             tank.drain((int) (consumption * speedModifier), IFluidHandler.FluidAction.EXECUTE);
             numero++;

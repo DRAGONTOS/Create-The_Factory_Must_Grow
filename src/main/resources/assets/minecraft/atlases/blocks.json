@@ -1,5 +1,7 @@
 {
   "sources": [
+    {"type": "single", "resource": "tfmg:fluid/oil_flow"},
+    {"type": "single", "resource": "tfmg:fluid/oil_still"},
     {"type": "single", "resource": "tfmg:fluid/crude_oil_flow"},
     {"type": "single", "resource": "tfmg:fluid/crude_oil_still"},
     {"type": "single", "resource": "tfmg:fluid/air"},

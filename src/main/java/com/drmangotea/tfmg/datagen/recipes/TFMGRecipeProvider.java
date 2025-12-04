@@ -629,6 +629,9 @@ public class TFMGRecipeProvider extends RecipeProvider {
         public static Fluid water() {
             return Fluids.WATER;
         }
+        public static Fluid lava() {
+            return Fluids.LAVA;
+        }
 
         //MISC
         public static Fluid coolingFluid() {

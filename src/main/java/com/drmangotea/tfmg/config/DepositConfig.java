@@ -13,7 +13,7 @@ public class DepositConfig extends ConfigBase {
         return "deposits";
     }
     private static class Comments {
-        static String depositMaxReserves = "Sets the maximum oil reserves a deposit can have.";
+        static String depositMaxReserves = "Sets the maximum reserves a deposit can have.";
         static String infiniteDeposits = "Makes deposits bottomless.";
     }
 }
