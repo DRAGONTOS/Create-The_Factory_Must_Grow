@@ -15,16 +15,7 @@ public class TFMGDistillationRecipeGen extends DistillationRecipeGen {
 
 	GeneratedRecipe
 
-	CRUDE_OIL = create(TFMG.asResource("crude_oil"), b ->b
-			.require(SizedFluidIngredient.of(crudeOil(),240))
-			.output(heavyOil(), 120)
-			.output(diesel(), 60)
-			.output(kerosene(), 30)
-			.output(naphtha(), 10)
-			.output(gasoline(), 60)
-			.output(lpg(), 60)
-            .output(naturalgas(), 20)),
-	CRUDE_OIL_NO_NAPHTHA = create(TFMG.asResource("crude_oil_no_naphtha"), b ->b
+	CRUDE_OIL = create(TFMG.asResource("crude_oil_no_naphtha"), b ->b
 			.require(SizedFluidIngredient.of(crudeOil(),240))
 			.output(heavyOil(), 125)
 			.output(diesel(), 65)

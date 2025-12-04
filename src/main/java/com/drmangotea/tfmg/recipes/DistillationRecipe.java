@@ -34,7 +34,7 @@ public class DistillationRecipe extends StandardProcessingRecipe<RecipeInput> {
 
     @Override
     public int getMaxFluidOutputCount() {
-        return 6;
+        return 10;
     }
 
     @Override
