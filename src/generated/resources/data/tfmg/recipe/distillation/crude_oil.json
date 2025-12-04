@@ -31,6 +31,10 @@
     {
       "amount": 60,
       "id": "tfmg:lpg"
+    },
+    {
+      "amount": 80,
+      "id": "tfmg:natural_gas"
     }
   ]
 }

@@ -69,6 +69,11 @@ public class TFMGFillingRecipeGen extends FillingRecipeGen {
                     .require(SizedFluidIngredient.of(propylene(), 1000))
                     .output(propyleneTank())
             ),
+            NATURAL_GAS_TANK = create(TFMG.asResource("natural_gas_tank"), b -> b
+                    .require(Items.BUCKET)
+                    .require(SizedFluidIngredient.of(naturalgas(), 1000))
+                    .output(naturalgasTank())
+            ),
             NEON_TANK = create(TFMG.asResource("neon_tank"), b -> b
                     .require(Items.BUCKET)
                     .require(SizedFluidIngredient.of(neon(), 1000))

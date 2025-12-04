@@ -413,11 +413,11 @@ public class SteelTankBlockEntity extends FluidTankBlockEntity implements IHaveG
     @Override
     public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
         SteelTankBlockEntity controllerTE = getControllerBE();
-        if (isDistillationTower)
-            return false;
-        if (getControllerBE() != null)
-            if (getControllerBE().isDistillationTower)
-                return false;
+//        if (isDistillationTower)
+//            return false;
+//        if (getControllerBE() != null)
+//            if (getControllerBE().isDistillationTower)
+//                return false;
 
         return containedFluidTooltip(tooltip, isPlayerSneaking,
                 level.getCapability(Capabilities.FluidHandler.BLOCK, getControllerBE().getBlockPos(), null));

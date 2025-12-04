@@ -576,6 +576,9 @@ public class TFMGRecipeProvider extends RecipeProvider {
         public static Fluid propylene() {
             return TFMGFluids.PROPYLENE.getSource();
         }
+        public static Fluid naturalgas() {
+            return TFMGFluids.NATURAL_GAS.getSource();
+        }
         public static Fluid propane() {
             return TFMGFluids.PROPANE.getSource();
         }
@@ -671,6 +674,9 @@ public class TFMGRecipeProvider extends RecipeProvider {
         }
         public static ItemLike propyleneTank() {
             return TFMGRegistrate.getBucket("propylene");
+        }
+        public static ItemLike naturalgasTank() {
+            return TFMGRegistrate.getBucket("natural_gas");
         }
         public static ItemLike propaneTank() {
             return TFMGRegistrate.getBucket("propane");

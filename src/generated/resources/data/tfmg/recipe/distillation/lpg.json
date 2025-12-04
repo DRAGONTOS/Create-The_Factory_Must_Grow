@@ -1,0 +1,28 @@
+{
+  "type": "tfmg:distillation",
+  "ingredients": [
+    {
+      "type": "neoforge:single",
+      "amount": 340,
+      "fluid": "tfmg:lpg"
+    }
+  ],
+  "results": [
+    {
+      "amount": 10,
+      "id": "tfmg:propylene"
+    },
+    {
+      "amount": 35,
+      "id": "tfmg:propane"
+    },
+    {
+      "amount": 120,
+      "id": "tfmg:butane"
+    },
+    {
+      "amount": 120,
+      "id": "tfmg:ethylene"
+    }
+  ]
+}

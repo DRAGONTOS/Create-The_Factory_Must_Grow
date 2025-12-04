@@ -14,6 +14,8 @@
     "tfmg:ethylene",
     "tfmg:flowing_propylene",
     "tfmg:propylene",
+    "tfmg:flowing_natural_gas",
+    "tfmg:natural_gas",
     "tfmg:flowing_neon",
     "tfmg:neon",
     "tfmg:flowing_carbon_dioxide",
