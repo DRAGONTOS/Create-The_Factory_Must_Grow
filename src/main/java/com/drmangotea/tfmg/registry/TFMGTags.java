@@ -128,6 +128,7 @@ public class TFMGTags {
         OIL(COMMON),
         CRUDE_OIL(COMMON),
         MOLTEN_STEEL(COMMON),
+        MINERAL_SLURRY(COMMON),
         MOLTEN_MAGMA(COMMON),
         FUEL(COMMON)
 

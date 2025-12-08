@@ -25,6 +25,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.Tags;
@@ -652,6 +653,9 @@ public class TFMGRecipeProvider extends RecipeProvider {
         public static Fluid moltenSteel() {
             return TFMGFluids.MOLTEN_STEEL.getSource();
         }
+        public static Fluid mineralSlurry() {
+            return TFMGFluids.MINERAL_SLURRY.getSource();
+        }
         public static Fluid moltenMagma() {
             return TFMGFluids.MOLTEN_MAGMA.getSource();
         }
@@ -749,6 +753,9 @@ public class TFMGRecipeProvider extends RecipeProvider {
         }
         public static ItemLike moltenSteelBucket() {
             return TFMGRegistrate.getBucket("molten_steel");
+        }
+        public static ItemLike mineralSlurryBucket() {
+            return TFMGRegistrate.getBucket("mineral_slurry");
         }
         public static ItemLike moltenMagmaBucket() {
             return TFMGRegistrate.getBucket("molten_magma");

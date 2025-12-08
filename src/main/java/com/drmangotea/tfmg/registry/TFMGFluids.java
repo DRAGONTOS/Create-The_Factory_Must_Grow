@@ -42,6 +42,7 @@ public class TFMGFluids {
             NATURAL_GAS = gas("natural_gas", 0xffc0d1b4),
             NEON = gas("neon", 0xff9dede9),
             CARBON_DIOXIDE = gas("carbon_dioxide", 0xff525252),
+            CARBON_MONOXIDE = gas("carbon_monoxide", 0xff525252),
             AIR = gas("air", 0xffdfe6e5, TFMGTags.TFMGFluidTags.AIR.tag),
             HOT_AIR = gas("hot_air", 0xffe8e1d5);
 
@@ -56,6 +57,7 @@ public class TFMGFluids {
             KEROSENE = fuel("kerosene", 0x7C82D5, TFMGTags.TFMGFluidTags.KEROSENE.tag, TFMGTags.TFMGFluidTags.FIREBOX_FUEL.tag),
             CREOSOTE = fuel("creosote", 0x010101, TFMGTags.TFMGFluidTags.CREOSOTE.tag, TFMGTags.TFMGFluidTags.BLAST_STOVE_FUEL.tag),
             MOLTEN_STEEL = hotFluid("molten_steel", 0xFFF760, TFMGTags.TFMGFluidTags.MOLTEN_STEEL.tag),
+            MINERAL_SLURRY = hotFluid("mineral_slurry", 0xFFF760, TFMGTags.TFMGFluidTags.MINERAL_SLURRY.tag),
             MOLTEN_SLAG = hotFluid("molten_slag", 0xFFF760),
             MOLTEN_MAGMA = hotFluid("molten_magma", 0xe66410),
             MOLTEN_PLASTIC = hotFluid("molten_plastic", 0xDEE4FF),

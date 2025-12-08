@@ -11,7 +11,7 @@ b:
 release:
 	sh gradlew build	
 	sleep 1
-	sh -c "cp -r ./build/libs/tfmg-1.1.0c.jar ~/.local/share/PrismLauncher/instances/Test\ mods\ 1.21.1/minecraft/mods/"
+	sh -c "cp -r ./build/libs/tfmg* ~/.local/share/PrismLauncher/instances/Test\ mods\ 1.21.1/minecraft/mods/"
 	$(MAKE) install.core
 
 clear:

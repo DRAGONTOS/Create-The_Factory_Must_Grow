@@ -34,6 +34,7 @@ public class TFMGVatRecipeGen extends VatRecipeGen {
                     .require(Blocks.GRAVEL.asItem())
                     .require(TFMGItems.LIMESAND)
                     .require(Fluids.WATER, 250)
+                    .require(Fluids.WATER, 250)
                     .output(TFMGFluids.LIQUID_CONCRETE.get(), 1000)
                     .values(mixing())
             ),
@@ -46,7 +47,18 @@ public class TFMGVatRecipeGen extends VatRecipeGen {
                             .output(TFMGFluids.MOLTEN_SLAG.get(), 288)
                             .duration(20)
                     .values(arcBlasting())),
+            ARC_FURNACE_CARBON_MONOXIDE_REDOX =
+                    create("carbon_monoxide_redox",
+                            b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                                    .require(TFMGTags.TFMGItemTags.FLUX.tag)          // 1st item
+                                    //.require(Blocks.COAL_BLOCK.asItem(), 6)           // 2nd item (six blocks)
+                                    .require(TFMGFluids.AIR.get(), 2)                 // 1st fluid
+                                    .output(TFMGFluids.CARBON_MONOXIDE.get(), 7)
+                                    .output(TFMGFluids.CARBON_DIOXIDE.get(), 11)
+                                    .duration(100)
+                                    .values(arcBlasting())),
             NEON = create("neon", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                            .require(TFMGFluids.AIR.get(), 1000)
                             .require(TFMGFluids.AIR.get(), 1000)
                             .output(TFMGFluids.NEON.get(), 1)
                             .duration(10)

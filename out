@@ -1762,6 +1762,7 @@
 ./build/resources/main/assets/tfmg/textures/item/aluminum_spool.png
 ./build/resources/main/assets/tfmg/textures/item/aluminum_door.png
 ./build/resources/main/assets/tfmg/textures/item/carbon_dioxide_bucket.png
+./build/resources/main/assets/tfmg/textures/item/carbon_monoxide_bucket.png
 ./build/resources/main/assets/tfmg/textures/item/aluminum_hoe.png
 ./build/resources/main/assets/tfmg/textures/item/mesh.png
 ./build/resources/main/assets/tfmg/textures/item/golden_turbo.png
@@ -4231,6 +4232,7 @@
 ./build/resources/main/assets/tfmg/models/item/pipe_bomb.json
 ./build/resources/main/assets/tfmg/models/item/diesel_engine_cylinder.json
 ./build/resources/main/assets/tfmg/models/item/carbon_dioxide_bucket.json
+./build/resources/main/assets/tfmg/models/item/carbon_monoxide_bucket.json
 ./build/resources/main/assets/tfmg/models/item/magnet.json
 ./build/resources/main/assets/tfmg/models/item/slag_block.json
 ./build/resources/main/assets/tfmg/models/item/steel_pipe.json
@@ -11567,6 +11569,7 @@
 ./src/main/resources/assets/tfmg/textures/item/aluminum_spool.png
 ./src/main/resources/assets/tfmg/textures/item/aluminum_door.png
 ./src/main/resources/assets/tfmg/textures/item/carbon_dioxide_bucket.png
+./src/main/resources/assets/tfmg/textures/item/carbon_monoxide_bucket.png
 ./src/main/resources/assets/tfmg/textures/item/aluminum_hoe.png
 ./src/main/resources/assets/tfmg/textures/item/mesh.png
 ./src/main/resources/assets/tfmg/textures/item/golden_turbo.png
