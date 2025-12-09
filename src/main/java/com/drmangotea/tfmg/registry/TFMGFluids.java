@@ -12,6 +12,7 @@ import com.simibubi.create.content.fluids.VirtualFluid;
 import com.tterrag.registrate.builders.FluidBuilder;
 import com.tterrag.registrate.util.entry.FluidEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
+import mekanism.common.registries.MekanismFluids;
 import net.createmod.catnip.theme.Color;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -35,7 +36,8 @@ public class TFMGFluids {
             LPG = gasFuel("lpg", 0xfff5e687, TFMGTags.TFMGFluidTags.LPG.tag, TFMGTags.TFMGFluidTags.FIREBOX_FUEL.tag),
             BUTANE = gasFuel("butane", 0xffad77d4, TFMGTags.TFMGFluidTags.FIREBOX_FUEL.tag),
             PROPANE = gasFuel("propane", 0xff88bf80, TFMGTags.TFMGFluidTags.FIREBOX_FUEL.tag),
-            HYDROGEN = gasFuel("hydrogen", 0xffd0f2f5),
+            //HYDROGEN = gasFuel("hydrogen", 0xffd0f2f5),
+            AMMONIA = gasFuel("ammonia", 0xffd0f2f5),
             FURNACE_GAS = gasFuel("furnace_gas", 0xff5c5555, TFMGTags.TFMGFluidTags.BLAST_STOVE_FUEL.tag, TFMGTags.TFMGFluidTags.FURNACE_GAS.tag),
             ETHYLENE = gas("ethylene", 0xffbcadcc),
             PROPYLENE = gas("propylene", 0xffc0d1b4),
@@ -64,6 +66,7 @@ public class TFMGFluids {
             LIQUID_SILICON = hotFluid("liquid_silicon", 0xFFF760),
             LUBRICATION_OIL = fluid("lubrication_oil", 0x9D945F, TFMGTags.TFMGFluidTags.LUBRICATION_OIL.tag, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
             COOLING_FLUID = fluid("cooling_fluid", 0x7BC1C1, TFMGTags.TFMGFluidTags.COOLING_FLUID.tag),
+            //COOLING_FLUID = fluid("cooling_fluid", 0x7BC1C1, TFMGTags.TFMGFluidTags.COOLING_FLUID.tag),
             NAPALM = fluid("napalm", 0xC0CA97),
             SULFURIC_ACID = acidFluid("sulfuric_acid", 0xE9E7CC),
             LIQUID_CONCRETE = concreteFluid("liquid_concrete", 0x5B5B59, ConcreteFluid.Source::new),

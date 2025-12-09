@@ -130,6 +130,7 @@ public class TFMGTags {
         MOLTEN_STEEL(COMMON),
         MINERAL_SLURRY(COMMON),
         MOLTEN_MAGMA(COMMON),
+        //HYDROGEN(COMMON),
         FUEL(COMMON)
 
         ;

@@ -29,6 +29,13 @@ public class TFMGCompactingRecipeGen extends CompactingRecipeGen {
                     .require(cinderFlour())
                     .output(TFMGItems.CINDERFLOURBLOCK)
             ),
+            AMMONIAPRODUCTION = create(TFMG.asResource("ammonia_production"), b -> b
+                    //.require(propane(), 100)
+                    .require(SizedFluidIngredient.of(hydrogen(), 735))
+                    .require(SizedFluidIngredient.of(air(), 285))
+                    .output(ammonia(), 1000)
+                    .requiresHeat(HeatCondition.HEATED)
+            ),
             CAST_IRON = create(TFMG.asResource("cast_iron"), b -> b
                     .require(ironIngot())
                     .require(coal())

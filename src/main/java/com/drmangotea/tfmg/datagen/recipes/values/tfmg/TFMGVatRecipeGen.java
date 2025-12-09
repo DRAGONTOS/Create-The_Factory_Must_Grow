@@ -4,12 +4,16 @@ package com.drmangotea.tfmg.datagen.recipes.values.tfmg;
 import com.drmangotea.tfmg.TFMG;
 import com.drmangotea.tfmg.datagen.recipes.builder.VatRecipeGen;
 import com.drmangotea.tfmg.recipes.VatMachineRecipe;
+import com.drmangotea.tfmg.registry.TFMGBlocks;
 import com.drmangotea.tfmg.registry.TFMGFluids;
 import com.drmangotea.tfmg.registry.TFMGItems;
 import com.drmangotea.tfmg.registry.TFMGTags;
 import com.simibubi.create.content.processing.recipe.HeatCondition;
+import mekanism.common.registries.MekanismChemicals;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
@@ -47,16 +51,21 @@ public class TFMGVatRecipeGen extends VatRecipeGen {
                             .output(TFMGFluids.MOLTEN_SLAG.get(), 288)
                             .duration(20)
                     .values(arcBlasting())),
-            ARC_FURNACE_CARBON_MONOXIDE_REDOX =
-                    create("carbon_monoxide_redox",
-                            b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
-                                    .require(TFMGTags.TFMGItemTags.FLUX.tag)          // 1st item
-                                    //.require(Blocks.COAL_BLOCK.asItem(), 6)           // 2nd item (six blocks)
-                                    .require(TFMGFluids.AIR.get(), 2)                 // 1st fluid
-                                    .output(TFMGFluids.CARBON_MONOXIDE.get(), 7)
-                                    .output(TFMGFluids.CARBON_DIOXIDE.get(), 11)
+            ARC_FURNACE_CARBON_MONOXIDE_REDOX = create("carbon_monoxide_redox", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                                    .require(Blocks.COAL_BLOCK.asItem(), 7)
+                                    .require(TFMGFluids.AIR.get(), 2000)                 // 1st fluid
+                                    .output(TFMGFluids.CARBON_MONOXIDE.get(), 7000)
+                                    .output(TFMGFluids.CARBON_DIOXIDE.get(), 11000)
                                     .duration(100)
-                                    .values(arcBlasting())),
+                                    .requiresHeat(HeatCondition.HEATED)
+                                    .values(mixing())),
+            AMMONIA_HABER_PROCESS = create("ammonia_haber_process", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(SizedFluidIngredient.of(hydrogen(), 7350))
+                    .require(SizedFluidIngredient.of(air(), 2850))
+                    .output(TFMGFluids.AMMONIA.get(), 10000)
+                    .duration(200)
+                    .requiresHeat(HeatCondition.HEATED)
+                    .values(mixing())),
             NEON = create("neon", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
                             .require(TFMGFluids.AIR.get(), 1000)
                             .require(TFMGFluids.AIR.get(), 1000)
@@ -65,9 +74,7 @@ public class TFMGVatRecipeGen extends VatRecipeGen {
                     .values(centrifuge())),
             SULFURIC_ACID = create("sulfuric_acid", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
                     .require(SizedFluidIngredient.of(water(), 1000))
-                    .require(sulfurDust())
-                    .require(sulfurDust())
-                    .require(sulfurDust())
+                    .require(TFMGItems.SULFUR_DUST.get(), 3)
                     .require(nitrateDust())
                     .output(sulfuricAcid(), 500)
                     .values(mixing())),
@@ -103,10 +110,7 @@ public class TFMGVatRecipeGen extends VatRecipeGen {
                             .duration(100)
                     .values(noMachines())),
             ALUMINUM = create("aluminum", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
-                            .require(TFMGItems.BAUXITE_POWDER)
-                            .require(TFMGItems.BAUXITE_POWDER)
-                            .require(TFMGItems.BAUXITE_POWDER)
-                            .require(TFMGItems.BAUXITE_POWDER)
+                            .require(TFMGItems.BAUXITE_POWDER.get(), 4)
                             .output(TFMGItems.ALUMINUM_INGOT)
                             .output(.5f, TFMGItems.ALUMINUM_NUGGET, 4)
                             .output(.25f, TFMGItems.ALUMINUM_NUGGET, 2)

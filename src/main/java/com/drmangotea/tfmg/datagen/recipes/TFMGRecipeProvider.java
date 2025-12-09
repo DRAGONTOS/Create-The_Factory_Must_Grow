@@ -11,6 +11,7 @@ import com.simibubi.create.api.data.recipe.ProcessingRecipeGen;
 import com.simibubi.create.content.decoration.palettes.AllPaletteBlocks;
 import com.simibubi.create.content.decoration.palettes.AllPaletteStoneTypes;
 import com.simibubi.create.foundation.data.recipe.*;
+import mekanism.common.registries.MekanismFluids;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
@@ -25,7 +26,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.Tags;
@@ -584,7 +584,10 @@ public class TFMGRecipeProvider extends RecipeProvider {
             return TFMGFluids.PROPANE.getSource();
         }
         public static Fluid hydrogen() {
-            return TFMGFluids.HYDROGEN.getSource();
+            return MekanismFluids.HYDROGEN.get();
+        }
+        public static Fluid ammonia() {
+            return TFMGFluids.AMMONIA.getSource();
         }
         public static Fluid butane() {
             return TFMGFluids.BUTANE.getSource();
@@ -633,6 +636,13 @@ public class TFMGRecipeProvider extends RecipeProvider {
         public static Fluid lava() {
             return Fluids.LAVA;
         }
+        public static Fluid HYDROGEN() {
+            return MekanismFluids.HYDROGEN.get();
+        }
+
+        public static Fluid AMMONIA() {
+            return TFMGFluids.AMMONIA.getSource();
+        }
 
         //MISC
         public static Fluid coolingFluid() {
@@ -670,6 +680,9 @@ public class TFMGRecipeProvider extends RecipeProvider {
         public static ItemLike airTank() {
             return TFMGRegistrate.getBucket("air");
         }
+        public static ItemLike ammoniaTank() {
+            return TFMGRegistrate.getBucket("ammonia");
+        }
         public static ItemLike hotAirTank() {
             return TFMGRegistrate.getBucket("hot_air");
         }
@@ -688,15 +701,15 @@ public class TFMGRecipeProvider extends RecipeProvider {
         public static ItemLike propaneTank() {
             return TFMGRegistrate.getBucket("propane");
         }
-        public static ItemLike hydrogenTank() {
+//        public static ItemLike hydrogenTank() {
 //            LOGGER.info("hydrogen fluid: {}", TFMGFluids.HYDROGEN);
 //            LOGGER.info("hydrogen source: {}", TFMGFluids.HYDROGEN.getSource());
 //            LOGGER.info("hydrogen bucket: {}", TFMGFluids.HYDROGEN.getSource().getBucket());
 //            var bucket = TFMGFluids.HYDROGEN.getSource().getBucket();
 //            LOGGER.info("bucket: {}", bucket);
 //            return bucket;
-            return TFMGRegistrate.getBucket("hydrogen");
-        }
+//            return TFMGRegistrate.getBucket("hydrogen");
+//        }
         public static ItemLike butaneTank() {
             return TFMGRegistrate.getBucket("butane");
         }

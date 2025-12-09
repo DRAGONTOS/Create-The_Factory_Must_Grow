@@ -79,6 +79,12 @@ public class TFMGDistillationRecipeGen extends DistillationRecipeGen {
             .output(lava(), 170)
             .output(sulfuricAcid(), 55));
 
+    //MOLTEN_MAGMA_DISTILLATION_DISTILLATION = create(TFMG.asResource("molten_magma_distillation"), b ->b
+    //        .require(SizedFluidIngredient.of(moltenMagma(),340))
+    //        .output(mineralSlurry(), 100)
+    //        .output(lava(), 170)
+    //        .output(sulfuricAcid(), 55));
+
 	public TFMGDistillationRecipeGen(PackOutput generator, CompletableFuture<HolderLookup.Provider> registries) {
 		super(generator, registries,TFMG.MOD_ID);
 	}

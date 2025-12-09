@@ -1515,6 +1515,7 @@ public class TFMGBlocks {
             .build()
             .lang("Block of Aluminum")
             .register();
+
     public static final BlockEntry<Block> PLASTIC_BLOCK = REGISTRATE.block("plastic_block", Block::new)
             .initialProperties(() -> Blocks.QUARTZ_BLOCK)
 
