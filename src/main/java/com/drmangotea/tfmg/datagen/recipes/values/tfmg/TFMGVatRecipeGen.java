@@ -12,6 +12,8 @@ import com.drmangotea.tfmg.registry.TFMGTags;
 import com.simibubi.create.content.processing.recipe.HeatCondition;
 import mekanism.common.registries.MekanismChemicals;
 import mekanism.common.registries.MekanismItems;
+import net.manmaed.cottonly.Cottonly;
+import net.manmaed.cottonly.items.CItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Items;
@@ -68,7 +70,7 @@ public class TFMGVatRecipeGen extends VatRecipeGen {
                     .output(TFMGFluids.NITRIC_ACID.get(), 2500)
                     .requiresHeat(HeatCondition.HEATED)
                     .values(mixing())),
-            GUNCOTTON_PRODUCTION = create("guncotton_production", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+            GUNCOTTON_WOOD_PRODUCTION = create("guncotton_wood_production", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
                     .require(TFMGFluids.FUMING_NITRIC_ACID.get(), 100)
                     .require(TFMGFluids.SULFURIC_ACID.get(), 315)
                     .require(IEFluids.ETHANOL.getStill(), 125)
@@ -76,7 +78,15 @@ public class TFMGVatRecipeGen extends VatRecipeGen {
                     .output(Items.GUNPOWDER.asItem(), 19)
                     .requiresHeat(HeatCondition.HEATED)
                     .values(mixing())),
-                    AMMONIA_HABER_PROCESS = create("ammonia_haber_process", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+            GUNCOTTON_COTTON_PRODUCTION = create("guncotton_cotton_production", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(TFMGFluids.FUMING_NITRIC_ACID.get(), 100)
+                    .require(TFMGFluids.SULFURIC_ACID.get(), 315)
+                    .require(IEFluids.ETHANOL.getStill(), 125)
+                    .require(CItems.COTTON_BALL.asItem(), 64)
+                    .output(Items.GUNPOWDER.asItem(), 58)
+                    .requiresHeat(HeatCondition.HEATED)
+                    .values(mixing())),
+            AMMONIA_HABER_PROCESS = create("ammonia_haber_process", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
                     .require(SizedFluidIngredient.of(hydrogen(), 735))
                     .require(SizedFluidIngredient.of(air(), 285))
                     .require(MekanismItems.STEEL_DUST.get(), 10)
