@@ -107,6 +107,7 @@ dependencies {
     //implementation ("dragontos:create-1.21.1-6.0.7-159:create-1.21.1-6.0.7-159.jar")
     //maven/dragontos/create-1.21.1-6.0.7-159/create-1.21.1-6.0.7-159.jar
     implementation (name: 'create-1.21.1-6.0.8', ext: 'jar')
+    implementation (name: 'ImmersiveEngineering-1.21.1-12.4.3-194', ext: 'jar')
     implementation("net.createmod.ponder:Ponder-NeoForge-${minecraft_version}:${ponder_version}")
     compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}")
     runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")

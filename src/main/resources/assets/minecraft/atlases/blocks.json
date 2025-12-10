@@ -186,6 +186,30 @@
         },
         {
             "type": "single",
+            "resource": "tfmg:fluid/nitric_acid_flow"
+        },
+        {
+            "type": "single",
+            "resource": "tfmg:fluid/nitric_acid_still"
+        },
+        {
+            "type": "single",
+            "resource": "tfmg:fluid/fuming_nitric_acid_flow"
+        },
+        {
+            "type": "single",
+            "resource": "tfmg:fluid/fuming_nitric_acid_still"
+        },
+        {
+            "type": "single",
+            "resource": "tfmg:fluid/nitrous_oxide_flow"
+        },
+        {
+            "type": "single",
+            "resource": "tfmg:fluid/nitrous_oxide_still"
+        },
+        {
+            "type": "single",
             "resource": "tfmg:fluid/propane"
         },
         {

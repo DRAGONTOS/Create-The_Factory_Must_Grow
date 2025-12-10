@@ -73,11 +73,16 @@ public class TFMGDistillationRecipeGen extends DistillationRecipeGen {
             .output(propane(), 45)
             .output(butane(), 50)),
 
-    MOLTEN_MAGMA_DISTILLATION_DISTILLATION = create(TFMG.asResource("molten_magma_distillation"), b ->b
+    MOLTEN_MAGMA_DISTILLATION = create(TFMG.asResource("molten_magma_distillation"), b ->b
             .require(SizedFluidIngredient.of(moltenMagma(),340))
             .output(mineralSlurry(), 100)
             .output(lava(), 170)
-            .output(sulfuricAcid(), 55));
+            .output(sulfuricAcid(), 55)),
+    NITRIC_ACID_DISTILLATION = create(TFMG.asResource("nitric_acid_distillation"), b ->b
+            .require(SizedFluidIngredient.of(nitricacid(),340))
+            .output(fumingnitricacid(), 120)
+            .output(water(), 200)
+            .output(nitrousoxide(), 50));
 
     //MOLTEN_MAGMA_DISTILLATION_DISTILLATION = create(TFMG.asResource("molten_magma_distillation"), b ->b
     //        .require(SizedFluidIngredient.of(moltenMagma(),340))

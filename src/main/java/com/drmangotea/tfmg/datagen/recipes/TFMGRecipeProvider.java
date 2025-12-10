@@ -377,6 +377,9 @@ public class TFMGRecipeProvider extends RecipeProvider {
         public static TagKey<Item> log() {
             return ItemTags.LOGS_THAT_BURN;
         }
+        public static TagKey<Item> woodPulp() {
+            return ItemTags.LOGS_THAT_BURN;
+        }
         public static TagKey<Item> string() {
             return Tags.Items.STRINGS;
         }
@@ -586,6 +589,9 @@ public class TFMGRecipeProvider extends RecipeProvider {
         public static Fluid hydrogen() {
             return MekanismFluids.HYDROGEN.get();
         }
+        public static Fluid oxygen() {
+            return MekanismFluids.OXYGEN.get();
+        }
         public static Fluid ammonia() {
             return TFMGFluids.AMMONIA.getSource();
         }
@@ -636,6 +642,16 @@ public class TFMGRecipeProvider extends RecipeProvider {
         public static Fluid lava() {
             return Fluids.LAVA;
         }
+        public static Fluid nitricacid() {
+            return TFMGFluids.NITRIC_ACID.getSource();
+        }
+        public static Fluid fumingnitricacid() {
+            return TFMGFluids.FUMING_NITRIC_ACID.getSource();
+        }
+        public static Fluid nitrousoxide() {
+            return TFMGFluids.NITROUS_OXIDE.getSource();
+        }
+
         public static Fluid HYDROGEN() {
             return MekanismFluids.HYDROGEN.get();
         }
@@ -739,6 +755,9 @@ public class TFMGRecipeProvider extends RecipeProvider {
         }
         public static ItemLike keroseneBucket() {
             return TFMGRegistrate.getBucket("kerosene");
+        }
+        public static ItemLike nitricacidBucket() {
+            return TFMGRegistrate.getBucket("nitric_acid");
         }
         public static ItemLike gasolineBucket() {
             return TFMGRegistrate.getBucket("gasoline");

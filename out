@@ -855,6 +855,7 @@
 ./build/resources/main/assets/create/textures/fluid/ethylene.png
 ./build/resources/main/assets/create/textures/fluid/lubrication_oil_still.png
 ./build/resources/main/assets/create/textures/fluid/kerosene_still.png
+./build/resources/main/assets/create/textures/fluid/nitric_acid_still.png
 ./build/resources/main/assets/create/textures/fluid/napalm_flow.png
 ./build/resources/main/assets/create/textures/fluid/naphtha_flow.png.mcmeta
 ./build/resources/main/assets/create/textures/fluid/molten_slag_flow.png.mcmeta
@@ -865,16 +866,19 @@
 ./build/resources/main/assets/create/textures/fluid/naphtha_still.png.mcmeta
 ./build/resources/main/assets/create/textures/fluid/air.png
 ./build/resources/main/assets/create/textures/fluid/kerosene_flow.png
+./build/resources/main/assets/create/textures/fluid/nitric_acid_flow.png
 ./build/resources/main/assets/create/textures/fluid/liquid_concrete.png
 ./build/resources/main/assets/create/textures/fluid/crude_oil_flow.png.mcmeta
 ./build/resources/main/assets/create/textures/fluid/propylene.png
 ./build/resources/main/assets/create/textures/fluid/butane.png.mcmeta
 ./build/resources/main/assets/create/textures/fluid/kerosene_flow.png.mcmeta
+./build/resources/main/assets/create/textures/fluid/nitric_acid_flow.png.mcmeta
 ./build/resources/main/assets/create/textures/fluid/lpg.png
 ./build/resources/main/assets/create/textures/fluid/propane.png
 ./build/resources/main/assets/create/textures/fluid/cooling_fluid_still.png
 ./build/resources/main/assets/create/textures/fluid/air.png.mcmeta
 ./build/resources/main/assets/create/textures/fluid/kerosene_still.png.mcmeta
+./build/resources/main/assets/create/textures/fluid/nitric_acid_still.png.mcmeta
 ./build/resources/main/assets/create/textures/fluid/oil_flow.png
 ./build/resources/main/assets/create/textures/fluid/molten_steel_flow.png.mcmeta
 ./build/resources/main/assets/create/textures/fluid/diesel_flow.png
@@ -946,6 +950,7 @@
 ./build/resources/main/assets/tfmg/textures/fluid/ethylene.png
 ./build/resources/main/assets/tfmg/textures/fluid/lubrication_oil_still.png
 ./build/resources/main/assets/tfmg/textures/fluid/kerosene_still.png
+./build/resources/main/assets/tfmg/textures/fluid/nitric_acid_still.png
 ./build/resources/main/assets/tfmg/textures/fluid/napalm_flow.png
 ./build/resources/main/assets/tfmg/textures/fluid/naphtha_flow.png.mcmeta
 ./build/resources/main/assets/tfmg/textures/fluid/hot_air.png
@@ -958,6 +963,7 @@
 ./build/resources/main/assets/tfmg/textures/fluid/naphtha_still.png.mcmeta
 ./build/resources/main/assets/tfmg/textures/fluid/air.png
 ./build/resources/main/assets/tfmg/textures/fluid/kerosene_flow.png
+./build/resources/main/assets/tfmg/textures/fluid/nitric_acid_flow.png
 ./build/resources/main/assets/tfmg/textures/fluid/liquid_asphalt_flow.png
 ./build/resources/main/assets/tfmg/textures/fluid/neon.png
 ./build/resources/main/assets/tfmg/textures/fluid/crude_oil_flow.png.mcmeta
@@ -966,7 +972,7 @@
 ./build/resources/main/assets/tfmg/textures/fluid/pink_cooling_fluid_still.png
 ./build/resources/main/assets/tfmg/textures/fluid/butane.png.mcmeta
 ./build/resources/main/assets/tfmg/textures/fluid/hot_air.png.mcmeta
-./build/resources/main/assets/tfmg/textures/fluid/kerosene_flow.png.mcmeta
+./build/resources/main/assets/tfmg/textures/fluid/nitric_acid_flow.png.mcmeta
 ./build/resources/main/assets/tfmg/textures/fluid/lpg.png
 ./build/resources/main/assets/tfmg/textures/fluid/propane.png
 ./build/resources/main/assets/tfmg/textures/fluid/liquid_silicon_still.png.mcmeta
@@ -977,7 +983,7 @@
 ./build/resources/main/assets/tfmg/textures/fluid/liquid_silicon_flow.png.mcmeta
 ./build/resources/main/assets/tfmg/textures/fluid/molten_magma_flow.png
 ./build/resources/main/assets/tfmg/textures/fluid/molten_plastic_flow.png
-./build/resources/main/assets/tfmg/textures/fluid/kerosene_still.png.mcmeta
+./build/resources/main/assets/tfmg/textures/fluid/nitric_acid_still.png.mcmeta
 ./build/resources/main/assets/tfmg/textures/fluid/furnace_gas.png.mcmeta
 ./build/resources/main/assets/tfmg/textures/fluid/pink_cooling_fluid_flow.png.mcmeta
 ./build/resources/main/assets/tfmg/textures/fluid/pink_cooling_fluid_still.png.mcmeta
@@ -1784,6 +1790,7 @@
 ./build/resources/main/assets/tfmg/textures/item/steel_mechanism.png
 ./build/resources/main/assets/tfmg/textures/item/aluminum_sword.png
 ./build/resources/main/assets/tfmg/textures/item/kerosene_bucket.png
+./build/resources/main/assets/tfmg/textures/item/nitric_acid_bucket.png
 ./build/resources/main/assets/tfmg/textures/item/lead_sheet.png
 ./build/resources/main/assets/tfmg/textures/item/steel_chestplate.png
 ./build/resources/main/assets/tfmg/textures/item/transmission.png
@@ -1991,6 +1998,7 @@
 ./build/resources/main/assets/tfmg/blockstates/magenta_rebar_concrete_slab.json
 ./build/resources/main/assets/tfmg/blockstates/brass_smart_fluid_pipe.json
 ./build/resources/main/assets/tfmg/blockstates/kerosene.json
+./build/resources/main/assets/tfmg/blockstates/nitric_acid.json
 ./build/resources/main/assets/tfmg/blockstates/encased_brass_pipe.json
 ./build/resources/main/assets/tfmg/blockstates/steel_truss.json
 ./build/resources/main/assets/tfmg/blockstates/rebar_concrete_stairs.json

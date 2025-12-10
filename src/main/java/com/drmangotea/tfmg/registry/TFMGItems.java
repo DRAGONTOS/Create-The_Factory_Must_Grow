@@ -117,6 +117,7 @@ public class TFMGItems {
 
     public static final ItemEntry<Item>
             SPARK_PLUG = REGISTRATE.item("spark_plug", Item::new).register(),
+            WOOD_PULP = REGISTRATE.item("wood_pulp", Item::new).register(),
             SLAG = REGISTRATE.item("slag", Item::new).register(),
             BITUMEN = REGISTRATE.item("bitumen", Item::new).register(),
             FIREPROOF_BRICK = REGISTRATE.item("fireproof_brick", Item::new).register(),

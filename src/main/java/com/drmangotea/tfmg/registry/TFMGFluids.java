@@ -7,12 +7,10 @@ import com.drmangotea.tfmg.base.fluid.AsphaltFluid;
 import com.drmangotea.tfmg.base.fluid.ConcreteFluid;
 import com.drmangotea.tfmg.base.fluid.HotFluidType;
 import com.simibubi.create.AllFluids;
-import com.simibubi.create.AllTags;
 import com.simibubi.create.content.fluids.VirtualFluid;
 import com.tterrag.registrate.builders.FluidBuilder;
 import com.tterrag.registrate.util.entry.FluidEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
-import mekanism.common.registries.MekanismFluids;
 import net.createmod.catnip.theme.Color;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -51,6 +49,9 @@ public class TFMGFluids {
 
     public static final FluidEntry<BaseFlowingFluid.Flowing>
             OIL = fluid("oil", 0x010101, TFMGTags.TFMGFluidTags.OIL.tag, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
+            NITRIC_ACID = fluid("nitric_acid", 0x010101, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
+            FUMING_NITRIC_ACID = fluid("fuming_nitric_acid", 0x010101, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
+            NITROUS_OXIDE = fluid("nitrous_oxide", 0x010101, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
             CRUDE_OIL = fluid("crude_oil", 0x010101, TFMGTags.TFMGFluidTags.CRUDE_OIL.tag, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
             HEAVY_OIL = fluid("heavy_oil", 0x010101, TFMGTags.TFMGFluidTags.HEAVY_OIL.tag, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
             GASOLINE = fuel("gasoline", 0xCCB17D, TFMGTags.TFMGFluidTags.GASOLINE.tag),

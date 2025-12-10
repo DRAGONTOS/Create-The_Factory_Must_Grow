@@ -149,9 +149,9 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
 
     @Override
     public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
-        inputTank = new SmartFluidTankBehaviour(SmartFluidTankBehaviour.INPUT, this, 4, 4000, true)
+        inputTank = new SmartFluidTankBehaviour(SmartFluidTankBehaviour.INPUT, this, 4, 10000, true)
                 .whenFluidUpdates(this::onInventoryChanged);
-        outputTank = new SmartFluidTankBehaviour(SmartFluidTankBehaviour.OUTPUT, this, 4, 4000, true)
+        outputTank = new SmartFluidTankBehaviour(SmartFluidTankBehaviour.OUTPUT, this, 4, 10000, true)
                 .whenFluidUpdates(this::onInventoryChanged)
                 .forbidInsertion();
         behaviours.add(inputTank);
@@ -366,7 +366,7 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
             }
             AtomicBoolean cantOutput = new AtomicBoolean(false);
             fluids.forEach((f, a) -> {
-                if (a > 4000)
+                if (a > 10000)
                     cantOutput.set(true);
             });
             //
@@ -491,7 +491,7 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
             for (SizedFluidIngredient ingredient : recipe.getFluidIngredients()) {
                 for (int i = 0; i < fluidHandler.getTanks(); i++) {
                     FluidStack fluidInTank = fluidHandler.getFluidInTank(i);
-                    if (ingredient.test(new FluidStack(fluidInTank.getFluidHolder(), 4000))) {
+                    if (ingredient.test(new FluidStack(fluidInTank.getFluidHolder(), 10000))) {
                         fluidHandler.getFluidInTank(i).setAmount(fluidInTank.getAmount() - ingredient.amount());
                         break;
                     }

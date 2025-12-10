@@ -1,12 +1,18 @@
 package com.drmangotea.tfmg.datagen.recipes.values.create;
 
+import blusunrize.immersiveengineering.api.IETags;
+import blusunrize.immersiveengineering.common.register.IEItemSubPredicates;
+import blusunrize.immersiveengineering.common.register.IEItems;
 import com.drmangotea.tfmg.TFMG;
+import com.drmangotea.tfmg.registry.TFMGFluids;
 import com.drmangotea.tfmg.registry.TFMGItems;
 import com.simibubi.create.AllRecipeTypes;
 import com.simibubi.create.api.data.recipe.CompactingRecipeGen;
 import com.simibubi.create.content.processing.recipe.HeatCondition;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.common.crafting.SizedIngredient;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 import java.util.concurrent.CompletableFuture;
@@ -33,7 +39,7 @@ public class TFMGCompactingRecipeGen extends CompactingRecipeGen {
                     //.require(propane(), 100)
                     .require(SizedFluidIngredient.of(hydrogen(), 735))
                     .require(SizedFluidIngredient.of(air(), 285))
-                    .output(ammonia(), 1000)
+                    .output(TFMGFluids.AIR.get (), 1000)
                     .requiresHeat(HeatCondition.HEATED)
             ),
             CAST_IRON = create(TFMG.asResource("cast_iron"), b -> b

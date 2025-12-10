@@ -1,19 +1,20 @@
 package com.drmangotea.tfmg.datagen.recipes.values.tfmg;
 
 
+import blusunrize.immersiveengineering.common.register.IEFluids;
+import blusunrize.immersiveengineering.common.register.IEItems;
 import com.drmangotea.tfmg.TFMG;
 import com.drmangotea.tfmg.datagen.recipes.builder.VatRecipeGen;
 import com.drmangotea.tfmg.recipes.VatMachineRecipe;
-import com.drmangotea.tfmg.registry.TFMGBlocks;
 import com.drmangotea.tfmg.registry.TFMGFluids;
 import com.drmangotea.tfmg.registry.TFMGItems;
 import com.drmangotea.tfmg.registry.TFMGTags;
 import com.simibubi.create.content.processing.recipe.HeatCondition;
 import mekanism.common.registries.MekanismChemicals;
+import mekanism.common.registries.MekanismItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
@@ -51,37 +52,52 @@ public class TFMGVatRecipeGen extends VatRecipeGen {
                             .output(TFMGFluids.MOLTEN_SLAG.get(), 288)
                             .duration(20)
                     .values(arcBlasting())),
-            ARC_FURNACE_CARBON_MONOXIDE_REDOX = create("carbon_monoxide_redox", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+            CARBON_MONOXIDE_REDOX = create("carbon_monoxide_redox", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
                                     .require(Blocks.COAL_BLOCK.asItem(), 7)
                                     .require(TFMGFluids.AIR.get(), 2000)                 // 1st fluid
-                                    .output(TFMGFluids.CARBON_MONOXIDE.get(), 7000)
-                                    .output(TFMGFluids.CARBON_DIOXIDE.get(), 11000)
-                                    .duration(100)
+                                    .require(IEItems.Ingredients.CATALYST_PLATINUM.get(), 1)
+                                    .output(TFMGFluids.CARBON_MONOXIDE.get(), 700)
+                                    .output(IEItems.Ingredients.CATALYST_PLATINUM.get(), 1)
                                     .requiresHeat(HeatCondition.HEATED)
                                     .values(mixing())),
-            AMMONIA_HABER_PROCESS = create("ammonia_haber_process", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
-                    .require(SizedFluidIngredient.of(hydrogen(), 7350))
-                    .require(SizedFluidIngredient.of(air(), 2850))
-                    .output(TFMGFluids.AMMONIA.get(), 10000)
-                    .duration(200)
+            OSTWALD_PROCESS = create("ostwald_process", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(SizedFluidIngredient.of(oxygen(), 4000))
+                    .require(TFMGFluids.AMMONIA.get(), 1000)
+                    .require(IEItems.Ingredients.CATALYST_PLATINUM.get(), 1)
+                    .output(IEItems.Ingredients.CATALYST_PLATINUM.get(), 1)
+                    .output(TFMGFluids.NITRIC_ACID.get(), 2500)
                     .requiresHeat(HeatCondition.HEATED)
                     .values(mixing())),
-            NEON = create("neon", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
-                            .require(TFMGFluids.AIR.get(), 1000)
-                            .require(TFMGFluids.AIR.get(), 1000)
-                            .output(TFMGFluids.NEON.get(), 1)
-                            .duration(10)
-                    .values(centrifuge())),
+            GUNCOTTON_PRODUCTION = create("guncotton_production", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(TFMGFluids.FUMING_NITRIC_ACID.get(), 100)
+                    .require(TFMGFluids.SULFURIC_ACID.get(), 315)
+                    .require(IEFluids.ETHANOL.getStill(), 125)
+                    .require(IEItems.Ingredients.DUST_WOOD.asItem(), 64)
+                    .output(Items.GUNPOWDER.asItem(), 19)
+                    .requiresHeat(HeatCondition.HEATED)
+                    .values(mixing())),
+                    AMMONIA_HABER_PROCESS = create("ammonia_haber_process", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(SizedFluidIngredient.of(hydrogen(), 735))
+                    .require(SizedFluidIngredient.of(air(), 285))
+                    .require(MekanismItems.STEEL_DUST.get(), 10)
+                    .output(TFMGFluids.AMMONIA.get(), 1000)
+                    .output(MekanismItems.STEEL_DUST.get(), 10)
+                    .requiresHeat(HeatCondition.HEATED)
+                    .values(mixing())),
+//            NEON = create("neon", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+//                            .require(TFMGFluids.AIR.get(), 1000)
+//                            .output(TFMGFluids.NEON.get(), 1)
+//                    .values(centrifuge())),
             SULFURIC_ACID = create("sulfuric_acid", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
                     .require(SizedFluidIngredient.of(water(), 1000))
-                    .require(TFMGItems.SULFUR_DUST.get(), 3)
                     .require(nitrateDust())
                     .output(sulfuricAcid(), 500)
                     .values(mixing())),
 
             RUBBER = create("rubber", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
                             .require(SizedFluidIngredient.of(heavyOil(), 250))
-                            .require(sulfurDust())
+                    .require(TFMGItems.SULFUR_DUST.get(), 3)
+
                             .output(rubber())
                             .requiresHeat(HeatCondition.HEATED)
                     .values(mixing())),

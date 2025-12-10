@@ -63,6 +63,7 @@ public class TFMGTags {
     }
     public enum TFMGItemTags {
         BLAST_FURNACE_FUEL,
+        WOOD_PULP,
         DUSTS_COAL_COKE(COMMON, "dusts/coal_coke"),
         DUSTS_IRON(COMMON, "dusts/iron"),
         DUSTS_SALTPETER(COMMON, "dusts/saltpeter"),
@@ -116,6 +117,9 @@ public class TFMGTags {
         GASOLINE(COMMON),
         DIESEL(COMMON),
         KEROSENE(COMMON),
+        NITRIC_ACID(COMMON),
+        FUMING_NITRIC_ACID(COMMON),
+        NITROUS_OXIDE(COMMON),
 
         CREOSOTE(COMMON),
         FURNACE_GAS(COMMON),
