@@ -1,5 +1,6 @@
 package com.drmangotea.tfmg.datagen.recipes;
 
+import blusunrize.immersiveengineering.common.register.IEItems;
 import com.drmangotea.tfmg.TFMG;
 import com.drmangotea.tfmg.base.TFMGRegistrate;
 import com.drmangotea.tfmg.content.decoration.pipes.TFMGPipes;
@@ -28,6 +29,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
 
@@ -106,6 +108,9 @@ public class TFMGRecipeProvider extends RecipeProvider {
 
         public static ItemLike tfmgSteelIngot() {
             return TFMGItems.STEEL_INGOT;
+        }
+        public static ItemLike sodiumMetal() {
+            return TFMGItems.SODIUM_METAL;
         }
         public static ItemLike coal() {
             return Items.COAL;
@@ -532,6 +537,18 @@ public class TFMGRecipeProvider extends RecipeProvider {
             return CommonMetal.ZINC.nuggets;
         }
 
+        public static TagKey<Item> copperDust() {
+            return TFMGTags.TFMGItemTags.DUSTS_COPPER.tag;
+        }
+
+        public static TagKey<Item> sodiumbicarbonate() {
+            return TFMGTags.TFMGItemTags.SODIUM_BICARBONATE.tag;
+        }
+
+        public static TagKey<Item> cupricchloride() {
+            return TFMGTags.TFMGItemTags.CUPRIC_CHLORIDE.tag;
+        }
+
         public static ItemStack resistor10Ohms(){
             ItemStack stack = TFMGBlocks.RESISTOR.asStack();
 
@@ -589,9 +606,19 @@ public class TFMGRecipeProvider extends RecipeProvider {
         public static Fluid hydrogen() {
             return MekanismFluids.HYDROGEN.get();
         }
+        public static Fluid sodium() {
+            return MekanismFluids.SODIUM.get();
+        }
         public static Fluid oxygen() {
             return MekanismFluids.OXYGEN.get();
         }
+        public static Fluid brine() {
+            return MekanismFluids.BRINE.get();
+        }
+        public static Fluid chlorine() {
+            return MekanismFluids.CHLORINE.get();
+        }
+
         public static Fluid ammonia() {
             return TFMGFluids.AMMONIA.getSource();
         }
@@ -630,6 +657,9 @@ public class TFMGRecipeProvider extends RecipeProvider {
         public static Fluid gasoline() {
             return TFMGFluids.GASOLINE.getSource();
         }
+        public static Fluid highoctanegasoline() {
+            return TFMGFluids.HIGH_OCTANE_GASOLINE.getSource();
+        }
         public static Fluid diesel() {
             return TFMGFluids.DIESEL.getSource();
         }
@@ -650,6 +680,21 @@ public class TFMGRecipeProvider extends RecipeProvider {
         }
         public static Fluid nitrousoxide() {
             return TFMGFluids.NITROUS_OXIDE.getSource();
+        }
+        public static Fluid hydrochloricacid() {
+            return TFMGFluids.HYDROCHLORIC_ACID.getSource();
+        }
+        public static Fluid acetaldehyde() {
+            return TFMGFluids.ACETALDEHYDE.getSource();
+        }
+        public static Fluid ethylhexanol() {
+            return TFMGFluids.ETHYLHEXANOL.getSource();
+        }
+        public static Fluid cetane_improver() {
+            return TFMGFluids.CETANE_IMPROVER.getSource();
+        }
+        public static Fluid butyraldehyde() {
+            return TFMGFluids.BUTYRALDEHYDE.getSource();
         }
 
         public static Fluid HYDROGEN() {
@@ -761,6 +806,9 @@ public class TFMGRecipeProvider extends RecipeProvider {
         }
         public static ItemLike gasolineBucket() {
             return TFMGRegistrate.getBucket("gasoline");
+        }
+        public static ItemLike highoctanegasolineBucket() {
+            return TFMGRegistrate.getBucket("high_octane_gasoline");
         }
         public static ItemLike dieselBucket() {
             return TFMGRegistrate.getBucket("diesel");

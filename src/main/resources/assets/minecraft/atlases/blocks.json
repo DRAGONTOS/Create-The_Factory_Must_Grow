@@ -58,6 +58,14 @@
         },
         {
             "type": "single",
+            "resource": "tfmg:fluid/high_cetane_diesel_flow"
+        },
+        {
+            "type": "single",
+            "resource": "tfmg:fluid/high_cetane_diesel_still"
+        },
+        {
+            "type": "single",
             "resource": "tfmg:fluid/gasoline_flow"
         },
         {
@@ -183,6 +191,46 @@
         {
             "type": "single",
             "resource": "tfmg:fluid/sulfuric_acid_still"
+        },
+        {
+            "type": "single",
+            "resource": "tfmg:fluid/hydrochloric_acid_flow"
+        },
+        {
+            "type": "single",
+            "resource": "tfmg:fluid/hydrochloric_acid_still"
+        },
+        {
+            "type": "single",
+            "resource": "tfmg:fluid/acetaldehyde_flow"
+        },
+        {
+            "type": "single",
+            "resource": "tfmg:fluid/acetaldehyde_still"
+        },
+        {
+            "type": "single",
+            "resource": "tfmg:fluid/butyraldehyde_flow"
+        },
+        {
+            "type": "single",
+            "resource": "tfmg:fluid/butyraldehyde_still"
+        },
+        {
+            "type": "single",
+            "resource": "tfmg:fluid/ethylhexanol_flow"
+        },
+        {
+            "type": "single",
+            "resource": "tfmg:fluid/ethylhexanol_still"
+        },
+        {
+            "type": "single",
+            "resource": "tfmg:fluid/cetane_improver_flow"
+        },
+        {
+            "type": "single",
+            "resource": "tfmg:fluid/cetane_improver_still"
         },
         {
             "type": "single",

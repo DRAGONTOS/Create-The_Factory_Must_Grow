@@ -24,7 +24,7 @@ public class TFMGFillingRecipeGen extends FillingRecipeGen {
     GeneratedRecipe
 
             HARDENED_PLANKS = create(TFMG.asResource("hardened_planks"), b -> b
-            .require(ItemTags.PLANKS)
+            .require(ItemTags.LOGS)
             .require(TFMGFluids.CREOSOTE.getSource(), 250)
             .output(TFMGBlocks.HARDENED_PLANKS)),
 

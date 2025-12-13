@@ -12,13 +12,15 @@ import com.drmangotea.tfmg.registry.TFMGTags;
 import com.simibubi.create.content.processing.recipe.HeatCondition;
 import mekanism.common.registries.MekanismChemicals;
 import mekanism.common.registries.MekanismItems;
-import net.manmaed.cottonly.Cottonly;
-import net.manmaed.cottonly.items.CItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluids;
+import net.neoforged.neoforge.common.crafting.SizedIngredient;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 import java.util.ArrayList;
@@ -33,8 +35,6 @@ public class TFMGVatRecipeGen extends VatRecipeGen {
         super(generator, registries, TFMG.MOD_ID);
     }
 
-
-
     GeneratedRecipe
             CONCRETE = create("concrete", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
                     .require(Blocks.SAND.asItem())
@@ -46,22 +46,41 @@ public class TFMGVatRecipeGen extends VatRecipeGen {
                     .values(mixing())
             ),
             ARC_FURNACE_STEEL = create("arc_furnace_steel", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
-                            .require(crushedRawIron())
-                            .require(TFMGTags.TFMGItemTags.FLUX.tag)
-                            .require(TFMGItems.COAL_COKE_DUST)
-                            .output(0.9f,TFMGItems.COAL_COKE_DUST)
-                            .output(TFMGFluids.MOLTEN_STEEL.get(), 144)
-                            .output(TFMGFluids.MOLTEN_SLAG.get(), 288)
-                            .duration(20)
+                    .require(TFMGItems.IRON_DUST.get(),1)
+                    .require(TFMGTags.TFMGItemTags.FLUX.tag)
+                    .require(TFMGItems.COAL_COKE_DUST)
+                    .output(0.9f,TFMGItems.COAL_COKE_DUST)
+                    .output(TFMGFluids.MOLTEN_STEEL.get(), 144)
+                    .output(TFMGFluids.MOLTEN_SLAG.get(), 288)
+                    .duration(20)
                     .values(arcBlasting())),
             CARBON_MONOXIDE_REDOX = create("carbon_monoxide_redox", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
-                                    .require(Blocks.COAL_BLOCK.asItem(), 7)
-                                    .require(TFMGFluids.AIR.get(), 2000)                 // 1st fluid
-                                    .require(IEItems.Ingredients.CATALYST_PLATINUM.get(), 1)
-                                    .output(TFMGFluids.CARBON_MONOXIDE.get(), 700)
-                                    .output(IEItems.Ingredients.CATALYST_PLATINUM.get(), 1)
-                                    .requiresHeat(HeatCondition.HEATED)
-                                    .values(mixing())),
+                    .require(Blocks.COAL_BLOCK.asItem(), 7)
+                    .require(TFMGFluids.AIR.get(), 2000)                 // 1st fluid
+                    .output(TFMGFluids.CARBON_MONOXIDE.get(), 700)
+                    .output(IEItems.Ingredients.CATALYST_PLATINUM.get(), 1)
+                    .requiresHeat(HeatCondition.HEATED)
+                    .values(mixing())),
+            AMMONIUM_NITRATE_GRANULATION = create("ammonium_nitrate_granulation", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(TFMGFluids.AMMONIA.get(),1000)
+                    .require(TFMGFluids.FUMING_NITRIC_ACID.get(), 1300)
+                    .output(IEItems.Misc.FERTILIZER.get(), 9)
+                    .values(mixing())),
+            NAPHTHA_CATALYST_REFORMING = create("naphtha_catalyst_reforming", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(TFMGFluids.NAPHTHA.get(),4000)
+                    .require(IEFluids.ETHANOL.getStill(),140)
+                    .require(IEItems.Ingredients.CATALYST_PLATINUM.get(),1)
+                    .output(IEItems.Ingredients.CATALYST_PLATINUM.get(),1)
+                    .output(TFMGFluids.HIGH_OCTANE_GASOLINE.get(), 2800)
+                    .values(mixing())),
+            GASOLINE_CATALYST_REFORMING = create("gasoline_catalyst_reforming", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(TFMGFluids.NAPHTHA.get(),4000)
+                    .require(TFMGFluids.GASOLINE.get(),1000)
+                    .require(IEFluids.ETHANOL.getStill(),190)
+                    .require(IEItems.Ingredients.CATALYST_PLATINUM.get(),1)
+                    .output(IEItems.Ingredients.CATALYST_PLATINUM.get(),1)
+                    .output(TFMGFluids.HIGH_OCTANE_GASOLINE.get(), 3850)
+                    .values(mixing())),
             OSTWALD_PROCESS = create("ostwald_process", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
                     .require(SizedFluidIngredient.of(oxygen(), 4000))
                     .require(TFMGFluids.AMMONIA.get(), 1000)
@@ -69,6 +88,68 @@ public class TFMGVatRecipeGen extends VatRecipeGen {
                     .output(IEItems.Ingredients.CATALYST_PLATINUM.get(), 1)
                     .output(TFMGFluids.NITRIC_ACID.get(), 2500)
                     .requiresHeat(HeatCondition.HEATED)
+                    .values(mixing())),
+            CUPRIC_CHLORIDE_PRODUCTION = create("cupric_chloride_production", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(TFMGItems.COPPER_DUST.get(), 12)
+                    .require(TFMGFluids.HYDROCHLORIC_ACID.get(), 3000)
+                    .require(TFMGItems.SODIUM_BICARBONATE.get(), 27)
+                    .output(TFMGItems.CUPRIC_CHLORIDE.get(), 32)
+                    .output(TFMGFluids.CARBON_DIOXIDE.get(),1200)
+                    .values(mixing())),
+            HYDROCHLORIC_ACID_PRODUCTION = create("hydrochloric_acid_production", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(SizedFluidIngredient.of(chlorine(), 1000))
+                    .require(SizedFluidIngredient.of(hydrogen(), 3000))
+                    .output(TFMGFluids.HYDROCHLORIC_ACID.get(), 3500)
+                    .values(mixing())),
+            SOLWAY_PROCESS = create("solway_process", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(SizedFluidIngredient.of(brine(), 4000))
+                    .require(TFMGFluids.AMMONIA.get(), 400)
+                    .require(TFMGFluids.CARBON_DIOXIDE.get(), 1800)
+                    .output(TFMGItems.SODIUM_BICARBONATE.get(), 9)
+                    .requiresHeat(HeatCondition.HEATED)
+                    .values(mixing())),
+            SOLWAY_PROCESS_SODIUM = create("solway_process_sodium", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(SizedFluidIngredient.of(sodium(), 18))
+                    .require(TFMGFluids.AMMONIA.get(), 400)
+                    .require(TFMGFluids.CARBON_DIOXIDE.get(), 1800)
+                    .output(TFMGItems.SODIUM_BICARBONATE.get(), 9)
+                    .requiresHeat(HeatCondition.HEATED)
+                    .values(mixing())),
+            WACKER_PROCESS = create("wacker_process", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(TFMGFluids.ETHYLENE.get(), 2500)
+                    .require(SizedFluidIngredient.of(oxygen(), 1250))
+                    .require(IEItems.Ingredients.CATALYST_CUPRIC_CHLORIDE.get(), 1) //copper catalyst
+                    .output(IEItems.Ingredients.CATALYST_CUPRIC_CHLORIDE.get(), 1) //copper catalyst
+                    .output(TFMGFluids.ACETALDEHYDE.get(), 2600)
+                    .requiresHeat(HeatCondition.HEATED)
+                    .values(mixing())),
+            HYDROFORMYLATION_PROCESS = create("hydroformylation_process", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(TFMGFluids.PROPYLENE.get(), 1250)
+                    .require(TFMGFluids.CARBON_MONOXIDE.get(), 1250)
+                    .require(SizedFluidIngredient.of(hydrogen(), 1250))
+                    .require(IEItems.Ingredients.CATALYST_CUPRIC_CHLORIDE.get(), 1) //copper catalyst
+                    .output(IEItems.Ingredients.CATALYST_CUPRIC_CHLORIDE.get(), 1) //copper catalyst
+                    .output(TFMGFluids.BUTYRALDEHYDE.get(), 1250)
+                    .requiresHeat(HeatCondition.HEATED)
+                    .values(mixing())),
+            ETHYL_CONDENSATE_PROCESS = create("ethyl_condensate_process", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(TFMGFluids.BUTYRALDEHYDE.get(), 2500)
+                    .require(SizedFluidIngredient.of(hydrogen(), 1250))
+                    .require(IEItems.Ingredients.CATALYST_PLATINUM.get(), 1)
+                    .output(IEItems.Ingredients.CATALYST_PLATINUM.get(), 1)
+                    .output(TFMGFluids.ETHYLHEXANOL.get(), 1500)
+                    .requiresHeat(HeatCondition.HEATED)
+                    .values(mixing())),
+            CETANE_IMPROVER_PRODUCTION = create("cetane_improver_production", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(TFMGFluids.ETHYLHEXANOL.get(), 1250)
+                    .require(TFMGFluids.NITRIC_ACID.get(), 1250)
+                    .require(TFMGFluids.SULFURIC_ACID.get(), 125)
+                    .output(TFMGFluids.CETANE_IMPROVER.get(), 1250)
+                    .values(mixing())),
+            HIGH_CETANE_DIESEL_PRODUCTION = create("high_cetane_diesel_production", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
+                    .require(TFMGFluids.DIESEL.get(), 1250)
+                    .require(TFMGFluids.CETANE_IMPROVER.get(), 2)
+                    .output(TFMGFluids.HIGH_CETANE_DIESEL.get(), 1250)
                     .values(mixing())),
             GUNCOTTON_WOOD_PRODUCTION = create("guncotton_wood_production", b -> ((VatMachineRecipe.Builder<VatMachineRecipe>) b)
                     .require(TFMGFluids.FUMING_NITRIC_ACID.get(), 100)
@@ -82,7 +163,7 @@ public class TFMGVatRecipeGen extends VatRecipeGen {
                     .require(TFMGFluids.FUMING_NITRIC_ACID.get(), 100)
                     .require(TFMGFluids.SULFURIC_ACID.get(), 315)
                     .require(IEFluids.ETHANOL.getStill(), 125)
-                    .require(CItems.COTTON_BALL.asItem(), 64)
+                    .require(IEItems.Ingredients.COTTON_BALL.asItem(), 64)
                     .output(Items.GUNPOWDER.asItem(), 58)
                     .requiresHeat(HeatCondition.HEATED)
                     .values(mixing())),

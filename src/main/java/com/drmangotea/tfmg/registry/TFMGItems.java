@@ -91,9 +91,14 @@ public class TFMGItems {
             LIMESAND = taggedIngredient("limesand", TFMGItemTags.FLUX.tag),
             SULFUR_DUST = taggedIngredient("sulfur_dust", TFMGItemTags.DUSTS_SULFUR.tag, Tags.Items.DUSTS),
             NITRATE_DUST = taggedIngredient("nitrate_dust", TFMGItemTags.DUSTS_SALTPETER.tag, Tags.Items.DUSTS),
+            IRON_DUST = taggedIngredient("iron_dust", TFMGItemTags.DUSTS_IRON.tag, Tags.Items.DUSTS),
+            COPPER_DUST = taggedIngredient("copper_dust", TFMGItemTags.DUSTS_COPPER.tag, Tags.Items.DUSTS),
+            SODIUM_BICARBONATE = taggedIngredient("sodium_bicarbonate", TFMGItemTags.SODIUM_BICARBONATE.tag, Tags.Items.DUSTS),
+            SODIUM_METAL = taggedIngredient("sodium_bicarbonate", TFMGItemTags.SODIUM_BICARBONATE.tag, Tags.Items.INGOTS, CREATE_INGOTS.tag),
             RUBBER_SHEET = taggedIngredient("rubber_sheet", TFMGItemTags.INGOTS_RUBBER.tag, PLATES.tag),
             SILICON_INGOT = taggedIngredient("silicon_ingot", TFMGItemTags.INGOTS_SILICON.tag, CREATE_INGOTS.tag),
-            CRUSHED_LITHIUM = taggedIngredient("crushed_raw_lithium", AllTags.AllItemTags.CRUSHED_RAW_MATERIALS.tag)
+            CRUSHED_LITHIUM = taggedIngredient("crushed_raw_lithium", AllTags.AllItemTags.CRUSHED_RAW_MATERIALS.tag),
+            CUPRIC_CHLORIDE = taggedIngredient("cupric_chloride", TFMGItemTags.CUPRIC_CHLORIDE.tag)
             ;
 
 

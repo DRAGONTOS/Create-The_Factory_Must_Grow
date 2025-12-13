@@ -44,18 +44,19 @@ public class TFMGFluids {
             CARBON_DIOXIDE = gas("carbon_dioxide", 0xff525252),
             CARBON_MONOXIDE = gas("carbon_monoxide", 0xff525252),
             AIR = gas("air", 0xffdfe6e5, TFMGTags.TFMGFluidTags.AIR.tag),
-            HOT_AIR = gas("hot_air", 0xffe8e1d5);
-
+            HOT_AIR = gas("hot_air", 0xffe8e1d5),
+            NITROUS_OXIDE = gas("nitrous_oxide", 0x010101);
 
     public static final FluidEntry<BaseFlowingFluid.Flowing>
             OIL = fluid("oil", 0x010101, TFMGTags.TFMGFluidTags.OIL.tag, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
-            NITRIC_ACID = fluid("nitric_acid", 0x010101, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
-            FUMING_NITRIC_ACID = fluid("fuming_nitric_acid", 0x010101, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
-            NITROUS_OXIDE = fluid("nitrous_oxide", 0x010101, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
+            NITRIC_ACID = acidFluid("nitric_acid", 0x010101, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
+            FUMING_NITRIC_ACID = acidFluid("fuming_nitric_acid", 0x010101, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
             CRUDE_OIL = fluid("crude_oil", 0x010101, TFMGTags.TFMGFluidTags.CRUDE_OIL.tag, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
             HEAVY_OIL = fluid("heavy_oil", 0x010101, TFMGTags.TFMGFluidTags.HEAVY_OIL.tag, TFMGTags.TFMGFluidTags.FLAMMABLE.tag),
             GASOLINE = fuel("gasoline", 0xCCB17D, TFMGTags.TFMGFluidTags.GASOLINE.tag),
+            HIGH_OCTANE_GASOLINE = fuel("high_octane_gasoline", 0xCCB17D, TFMGTags.TFMGFluidTags.HIGH_OCTANE_GASOLINE.tag),
             DIESEL = fuel("diesel", 0xBE9C84, TFMGTags.TFMGFluidTags.DIESEL.tag, TFMGTags.TFMGFluidTags.FIREBOX_FUEL.tag),
+            HIGH_CETANE_DIESEL = fuel("high_cetane_diesel", 0xBE9C84, TFMGTags.TFMGFluidTags.HIGH_CETANE_DIESEL.tag, TFMGTags.TFMGFluidTags.FIREBOX_FUEL.tag),
             NAPHTHA = fuel("naphtha", 0x683525, TFMGTags.TFMGFluidTags.NAPHTHA.tag, TFMGTags.TFMGFluidTags.FIREBOX_FUEL.tag),
             KEROSENE = fuel("kerosene", 0x7C82D5, TFMGTags.TFMGFluidTags.KEROSENE.tag, TFMGTags.TFMGFluidTags.FIREBOX_FUEL.tag),
             CREOSOTE = fuel("creosote", 0x010101, TFMGTags.TFMGFluidTags.CREOSOTE.tag, TFMGTags.TFMGFluidTags.BLAST_STOVE_FUEL.tag),
@@ -71,7 +72,12 @@ public class TFMGFluids {
             NAPALM = fluid("napalm", 0xC0CA97),
             SULFURIC_ACID = acidFluid("sulfuric_acid", 0xE9E7CC),
             LIQUID_CONCRETE = concreteFluid("liquid_concrete", 0x5B5B59, ConcreteFluid.Source::new),
-            LIQUID_ASPHALT = concreteFluid("liquid_asphalt", 0x010101, AsphaltFluid.Source::new);
+            LIQUID_ASPHALT = concreteFluid("liquid_asphalt", 0x010101, AsphaltFluid.Source::new),
+            HYDROCHLORIC_ACID = acidFluid("hydrochloric_acid", 0x010101),
+            ACETALDEHYDE = fluid("acetaldehyde", 0x010101),
+            BUTYRALDEHYDE = fluid("butyraldehyde", 0x010101),
+            CETANE_IMPROVER = fluid("cetane_improver", 0x010101),
+            ETHYLHEXANOL = fluid("ethylhexanol", 0x010101);
 
 
     @SafeVarargs
